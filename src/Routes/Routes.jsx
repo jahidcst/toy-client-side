@@ -5,6 +5,9 @@ import Error from "../ErrorPge/Error";
 import Blogs from "../Pages/Home/Blogs/Blogs";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
+import AllToys from "../Pages/AllToys/AllToys";
+import MyToys from "../Pages/MyToys/MyToys";
+import AddAToy from "../Pages/AddAToy/AddAToy";
 
 
 const router = createBrowserRouter([
@@ -16,6 +19,18 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/alltoys',
+        element: <AllToys></AllToys>
+      },
+      {
+        path: '/mytoys',
+        element: <MyToys></MyToys>
+      },
+      {
+        path: '/addatoy',
+        element: <AddAToy></AddAToy>
       },
       {
         path: '/blogs',
