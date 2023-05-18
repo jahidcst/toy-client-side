@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
-import Home from "../../Pages/Home/Home/Home";
-
-
 const Navber = () => {
     return (
         <div>
             <div className=" flex justify-between  items-center bg-base-300">
                 <div className="">
-                    <a className="btn btn-ghost normal-case text-xl">khlh</a>
+                    <a className="btn btn-ghost normal-case text-4xl font-semibold text-indigo-500">TOYLAND</a>
                 </div>
-                <div>
-                    <Link className="pr-3" to='/home'>Home</Link>
-                    <Link to='/blogs'>Blogs</Link>
+                <div className="gap">
+                    <Link className="pr-3" to='/'>Home</Link>
+                    <Link className="pr-3" to='/blogs'>Blogs</Link>
+                    <Link className="pr-3" to='/login'>Login</Link>
+                    <Link className="pr-3" to='/signup'>SignUp</Link>
                 </div>
 
                     <div className="">
@@ -23,7 +22,6 @@ const Navber = () => {
 
                     </div>
             </div>
-            <Home></Home>
         </div>
     );
 };
