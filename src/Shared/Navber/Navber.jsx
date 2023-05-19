@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const Navber = () => {
     return (
         <div>
-            <div className=" flex justify-between  items-center bg-base-300">
+            <div className=" flex justify-between  items-center bg-base-300 py-5">
                 <div className="">
                     <Link to='/'><a className="  normal-case text-4xl font-semibold text-indigo-500">TOYLAND</a></Link>
                 </div>

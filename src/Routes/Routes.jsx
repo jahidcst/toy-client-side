@@ -3,11 +3,12 @@ import Main from "../LayOut/Main";
 import Home from "../Pages/Home/Home/Home";
 import Error from "../ErrorPge/Error";
 import Blogs from "../Pages/Home/Blogs/Blogs";
-import Login from "../Login/Login";
+
 import SignUp from "../SignUp/SignUp";
 import AllToys from "../Pages/AllToys/AllToys";
 import MyToys from "../Pages/MyToys/MyToys";
 import AddAToy from "../Pages/AddAToy/AddAToy";
+import Login from "../Login/Login";
 
 
 const router = createBrowserRouter([
