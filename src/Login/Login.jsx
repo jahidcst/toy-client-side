@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa';
+
 
 const Login = () => {
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, google } = useContext(AuthContext);
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -23,8 +25,19 @@ const Login = () => {
       })
       .catch(error => console.log(error))
 
-      form.reset();
+    form.reset();
   }
+  const handleGoogle = () => {
+    google()
+        .then(result => {
+            const googleUser = result.user;
+            console.log(googleUser)
+            navigate(location?.state?.from.pathname || '/')
+        })
+        .catch(error => {
+            console.log(error.message)
+        })
+}
 
   return (
     <div>
@@ -54,6 +67,15 @@ const Login = () => {
                 </div>
                 <div className="form-control mt-6">
                   <input className="btn btn-primary" type="submit" value="Login" />
+                </div>
+                <div>
+                  <div className="divider">OR</div>
+                  <p className=" text-center">Login With</p>
+                  <div className="flex gap-10 ml-10 mt-7 text-xl">
+                    <button><p><FaFacebook /></p></button>
+                    <button onClick={handleGoogle}><p><FaGoogle /></p></button>
+                    <button><p><FaTwitter /></p></button>
+                  </div>
                 </div>
               </form>
               <p className="my-4 text-center">New to Toy Land? <Link className="text-blue-600 font-bold" to='/signup'>Sign Up</Link></p>

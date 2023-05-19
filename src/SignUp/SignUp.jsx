@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 
 const SignUp = () => {
 
-    const { createUser, updateUser } = useContext(AuthContext)
+    const { createUser, google, updateUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -27,7 +28,19 @@ const SignUp = () => {
             })
             .catch(error => console.log(error))
 
-            form.reset()
+        form.reset()
+    }
+
+    const handleGoogle = () => {
+        google()
+            .then(result => {
+                const googleUser = result.user;
+                console.log(googleUser)
+                navigate(location?.state?.from.pathname || '/')
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
 
@@ -72,6 +85,15 @@ const SignUp = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                     <input className="btn btn-primary" type="submit" value="Sign Up" />
+                                </div>
+                                <div>
+                                    <div className="divider">OR</div>
+                                    <p className=" text-center">SignUp With</p>
+                                    <div className="flex gap-12 ml-10 mt-7 text-xl">
+                                        <button><p><FaFacebook /></p></button>
+                                        <button onClick={handleGoogle}><p><FaGoogle /></p></button>
+                                        <button><p><FaTwitter /></p></button>
+                                    </div>
                                 </div>
                             </form>
                             <p className="my-4 text-center">Already Have an account? <Link className="text-blue-600 font-bold" to='/login'>Login</Link></p>
