@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url("https://img.freepik.com/free-photo/top-view-childhood-cancer-awareness-month-background-concepttoys_23-2149499365.jpg?w=900&t=st=1684388935~exp=1684389535~hmac=438f40268753595b95a5f87a60f3cb630daeef0e10a6273dc016bdbe590625b8")` }}>
-            <div className="hero-overlay bg-opacity-30"></div>
+        <div className="hero min-h-screen" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1636838258291-104f8399c2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1904&q=80")` }}>
+            <div className="hero-overlay bg-opacity-50"></div>
             <div className="hero-content text-center text-neutral-content">
-                <div className="max-w-md text-black">
-                    <h1 className="mb-5 text-6xl font-bold ">Toys <br /><span> for Kids</span></h1>
+                <div className="max-w-md text-white ">
+                    <h1 className="mb-5 text-6xl font-bold  ">Toys<span> for Kids</span></h1>
                     <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <Link to='/login' className="btn btn-secondary hover:bg-teal-950"> Explore More</Link>
                 </div>

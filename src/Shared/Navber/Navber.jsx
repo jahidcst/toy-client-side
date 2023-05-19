@@ -19,7 +19,7 @@ const Navber = () => {
     return (
         <div>
             <div className=" flex justify-between  items-center bg-base-300 py-5">
-                <div className=" flex ml-4 gap-3 items-center">
+                <div className=" flex ml-10 gap-3 items-center">
                     <img className="w-16 rounded-2xl" src="https://img.freepik.com/free-vector/different-kind-toys_1308-74241.jpg?w=740&t=st=1684496851~exp=1684497451~hmac=0b0ac256b4b9211c99909f7a6de68e8d044d80ae1b13afb6a45da36c4da24eec" alt="" />
                     <Link to='/'><a className=" normal-case text-5xl font-semibol"><span className="text-red-600">K</span><span className="text-green-600">I</span><span className="text-blue-600">D</span><span className="text-orange-600">S</span><span className="text-purple-600">Life</span></a></Link>
                 </div>
