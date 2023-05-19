@@ -1,29 +1,57 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from "react-hot-toast";
 const Navber = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                toast.success('Logged Out successfully');
+
+            })
+            .catch(err => console.log(err.massge))
+    }
+
+
     return (
         <div>
             <div className=" flex justify-between  items-center bg-base-300 py-5">
-                <div className="">
-                    <Link to='/'><a className="  normal-case text-4xl font-semibold text-indigo-500">TOYLAND</a></Link>
+                <div className=" flex ml-4 gap-3 items-center">
+                    <img className="w-16 rounded-2xl" src="https://img.freepik.com/free-vector/different-kind-toys_1308-74241.jpg?w=740&t=st=1684496851~exp=1684497451~hmac=0b0ac256b4b9211c99909f7a6de68e8d044d80ae1b13afb6a45da36c4da24eec" alt="" />
+                    <Link to='/'><a className=" normal-case text-5xl font-semibold text-orange-500">TOYLAND</a></Link>
                 </div>
-                <div className="gap">
-                    <Link className="pr-3 hover:text-purple-700" to='/'>Home</Link>
-                    <Link className="pr-3" to='/alltoys'>All Toys</Link>
-                    <Link className="pr-3" to='/mytoys'>My Toys</Link>
-                    <Link className="pr-3" to='/addatoy'>Add A Toy</Link>
-                    <Link className="pr-3" to='/blogs'>Blogs</Link>
-                    <Link className="pr-3" to='/login'>Login</Link>
-                    
+                <div className="flex gap-4">
+                    <NavLink className="{({isActive})=> (isActive ? 'font-semibold text-primary' : 'default')}" to='/'>Home</NavLink>
+                    <NavLink className="({isActive})=> (isActive ? 'font-semibold text-primary' : 'default')}" to='/alltoys'>All Toys</NavLink>
+                    {
+                        user?.email ?
+                            <>
+                                <NavLink className="({isActive})=> (isActive ? 'font-semibold text-primary' : 'default')}" to='/mytoys'>My Toys</NavLink>
+                                <NavLink className="({isActive})=> (isActive ? 'font-semibold text-primary' : 'default')}" to='/addatoy'>Add A Toy</NavLink>
+                            </>
+                            :
+                            <NavLink className="({isActive})=> (isActive ? 'font-semibold text-primary' : 'default')}" to='/login'>Login</NavLink>
+                    }
+                    <NavLink className="({isActive})=> (isActive ? 'font-semibold text-primary' : 'default')}" to='/blogs'>Blogs</NavLink>
 
                 </div>
 
-                <div className="">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div>
-                    </label>
+                <div className="navber-end">
+                    {
+                        user?.email &&
+                        <>
+                            <div className="avatar mr-5 flex gap-4 items-center  tooltip tooltip-left tooltip-neutral" data-tip={user?.displayName}>
+                                <div className="w-11 rounded-full ring">
+                                    <img src={user?.photoURL} alt="" />
+                                </div>
+                                <button className="btn btn-outline btn-error btn-sm mr-12" onClick={handleSignOut}>LogOut</button>
+                            </div>
 
+                        </>
+                    }
                 </div>
             </div>
         </div>
