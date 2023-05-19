@@ -1,13 +1,15 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 
 const SignUp = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const { createUser, updateUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
 
-    const handleSignUp = event =>{
+    const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -17,12 +19,18 @@ const SignUp = () => {
         console.log(name, photo, email, password)
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-        })
-        .catch(error => console.log(error))
-      }
+            .then(result => {
+                const user = result.user;
+                updateUser(result.user, name, photo)
+                console.log(user)
+                navigate(location?.state?.from.pathname || '/')
+            })
+            .catch(error => console.log(error))
+
+            form.reset()
+    }
+
+
 
     return (
         <div>
