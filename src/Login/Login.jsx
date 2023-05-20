@@ -41,10 +41,10 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="  bg-base-200">
         <div className="hero-content flex-col">
 
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
+          <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100 ">
             <div className="card-body">
               <div className="text-center ">
                 <h1 className="text-3xl font-bold pb-5">Login</h1>
@@ -71,7 +71,7 @@ const Login = () => {
                 <div>
                   <div className="divider">OR</div>
                   <p className=" text-center">Login With</p>
-                  <div className="flex gap-10 ml-10 mt-7 text-xl">
+                  <div className="flex gap-24 ml-16 mt-7 text-2xl">
                     <button><p><FaFacebook /></p></button>
                     <button onClick={handleGoogle}><p><FaGoogle /></p></button>
                     <button><p><FaTwitter /></p></button>

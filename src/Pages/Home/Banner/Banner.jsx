@@ -6,8 +6,8 @@ const Banner = () => {
             <div className="hero-overlay bg-opacity-50"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md text-white ">
-                    <h1 className="mb-5 text-6xl font-bold  ">Toys<span> for Kids</span></h1>
-                    <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <h1 className="mb-5 text-6xl font-bold  ">Legos<span> for Kids</span></h1>
+                    <p className="mb-5  font-bold">LEGO sets are popular and iconic construction toys loved by children and adults alike. Each LEGO set consists of small plastic bricks and various pieces that can be assembled and interconnected to create different structures, vehicles, buildings, and more..</p>
                     <Link to='/login' className="btn btn-secondary hover:bg-teal-950"> Explore More</Link>
                 </div>
             </div>

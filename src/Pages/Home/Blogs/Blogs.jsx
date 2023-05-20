@@ -2,8 +2,8 @@
 
 const Blogs = () => {
     return (
-        <div className="bg-slate-200 p-12">
-            <h1 className="text-center text-black font-bold text-3xl mb-5 underline">Important Question:</h1>
+        <div className=" p-12">
+            <h1 className="text-center text-orange-700 font-bold text-3xl mb-5 underline">Important Question:</h1>
             <div className="pb-3">
                 <h1 className="text-2xl font-semibold pb-5">
                     <span className=" text-purple-800">Question-1</span>:

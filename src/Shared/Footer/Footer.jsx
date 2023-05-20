@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-primary text-primary-content">
+            <footer className="footer p-10 bg-primary text-primary-content text-lg font-bold">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>
@@ -25,9 +25,9 @@ const Footer = () => {
                 </div>
             </footer>
             <footer className="footer px-10 py-4 border-t bg-primary text-primary-content border-base-300">
-                <div className="items-center grid-flow-col">
-                <img className="w-12 rounded-2xl" src="https://img.freepik.com/free-vector/different-kind-toys_1308-74241.jpg?w=740&t=st=1684496851~exp=1684497451~hmac=0b0ac256b4b9211c99909f7a6de68e8d044d80ae1b13afb6a45da36c4da24eec" alt="" />
-                    <p>KIDSLIFE Ltd. <br />Providing reliable tech since 1992</p>
+                <div className="items-center grid-flow-col font-bold">
+                    <img className="w-12 rounded-2xl" src="https://img.freepik.com/free-vector/different-kind-toys_1308-74241.jpg?w=740&t=st=1684496851~exp=1684497451~hmac=0b0ac256b4b9211c99909f7a6de68e8d044d80ae1b13afb6a45da36c4da24eec" alt="" />
+                    <p>KIDSLIFE Ltd. <br />Providing reliable tech since 2003</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">
