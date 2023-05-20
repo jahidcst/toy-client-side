@@ -2,8 +2,9 @@
 
 const AddAToy = () => {
     return (
-        <div>
-            <form>
+        <div className="my-10">
+            <h1 className="text-3xl text-center font-bold  text-green-600"> Add Your Favourite Toy :</h1>
+            <form >
                 <div className=" hero-content grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="form-control">
                         <label className="label">
@@ -57,8 +58,8 @@ const AddAToy = () => {
                     </div>
                     <textarea placeholder="Detail description" className="textarea textarea-bordered textarea-lg w-full max-w" ></textarea>
                 </div>
-                <div className="form-control mt-6">
-                    <input type="submit" className="btn bg-orange-600 btn-block" value="Order Now !!" />
+                <div className="form-control mt-4 mx-4">
+                    <input type="submit" className="btn btn-secondary btn-block" value="ADD NOW !!" />
                 </div>
 
             </form>
