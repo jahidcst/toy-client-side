@@ -20,6 +20,8 @@ const MyToys = () => {
             })
     }, [user]);
 
+
+// --------------------data delete----------------
     const handleDelete = id => {
         fetch(`http://localhost:7000/allToys/${id}`, {
             method: 'DELETE'
@@ -49,6 +51,44 @@ const MyToys = () => {
                     setToys(remaining)
                 }
             })
+    };
+
+
+// -----------------------data update----------------
+    const handleUpdate = id => {
+        fetch(`http://localhost:7000/allToys/${id}`,{
+            method: 'PATCH',
+            headers:{
+                'Content-type' : 'application/json'
+            },
+            body: JSON.stringify({status : 'update'})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.modifiedCount > 0){
+                // update state
+                Swal.fire({
+                    title: 'Do you want to save the changes?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Save',
+                    denyButtonText: `Don't save`,
+                  }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                      Swal.fire('Saved!', '', 'success')
+                    } else if (result.isDenied) {
+                      Swal.fire('Changes are not saved', '', 'info')
+                    }
+                  })
+                  const remaining = toys.filter(toy => toy._id !== id);
+                  const updated = toys.find(toy => toy._id === id);
+                  updated.status = 'confirm'
+                  const newToys = [updated, ...remaining];
+                  setToys(newToys);
+            }
+        })
     }
 
     return (
@@ -89,7 +129,9 @@ const MyToys = () => {
                                 key={toy._id}
                                 toy={toy}
                                 handleDelete={handleDelete}
+                                handleUpdate={handleUpdate}
                             ></ToysRow>)
+
                         }
 
                     </tbody>

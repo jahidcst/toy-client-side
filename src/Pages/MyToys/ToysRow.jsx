@@ -3,7 +3,7 @@
 
 
 
-const ToysRow = ({ toy, handleDelete }) => {
+const ToysRow = ({ toy, handleDelete, handleUpdate }) => {
 
     const { name, sub_category, price, available_quantity, _id } = toy;
 
@@ -26,6 +26,8 @@ const ToysRow = ({ toy, handleDelete }) => {
                 </td>
                 <td className="px-6 py-4">
                     <button onClick={() => handleDelete(_id)}><a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:bg-gray">Delete</a></button>
+
+                    <button onClick={() => handleUpdate(_id)} className="font-medium text-green-400 ml-5">Update</button>
                 </td>
             </tr>
         </div>

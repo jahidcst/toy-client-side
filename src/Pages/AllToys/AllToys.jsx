@@ -15,10 +15,11 @@ const AllToys = () => {
                 setAllToys(data)
             })
         },[])
+        
 
     return (
         <div className="my-5 mx-10">
-            <h1 className="text-3xl text-center font-bold mb-5 text-green-600">ALL TOYS :-</h1>
+            <h1 className="text-3xl text-center font-bold mb-5 text-green-600">ALL TOYS :- {allToys.length}</h1>
 
             {/* Search box  */}
             <div className=" mb-5 mt-7">
@@ -44,6 +45,7 @@ const AllToys = () => {
                 allToys.map(toy => <ToyTable toy={toy} />)
             
             }
+        
            
            </tbody>
             
