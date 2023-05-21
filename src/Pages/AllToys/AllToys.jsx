@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-key */
 
-
-
 import { useEffect, useState } from "react";
 import ToyTable from "./ToyTable";
+
 
 
 const AllToys = () => {
@@ -15,7 +14,7 @@ const AllToys = () => {
             .then(data => {
                 setAllToys(data)
             })
-    })
+        },[])
 
     return (
         <div className="my-5 mx-10">
@@ -43,7 +42,9 @@ const AllToys = () => {
            <tbody>
            {
                 allToys.map(toy => <ToyTable toy={toy} />)
+            
             }
+           
            </tbody>
             
 
