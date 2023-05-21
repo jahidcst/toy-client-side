@@ -1,6 +1,22 @@
+/* eslint-disable react/jsx-key */
+
+
+
+import { useEffect, useState } from "react";
+import ToyTable from "./ToyTable";
 
 
 const AllToys = () => {
+
+    const [allToys, setAllToys] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:7000/allToys')
+            .then(res => res.json())
+            .then(data => {
+                setAllToys(data)
+            })
+    })
+
     return (
         <div className="my-5 mx-10">
             <h1 className="text-3xl text-center font-bold mb-5 text-green-600">ALL TOYS :-</h1>
@@ -14,137 +30,24 @@ const AllToys = () => {
                     </button>
                 </div>
             </div>
+            {/* head */}
+            <thead className=" overflow-x-auto w-full">
+                <tr className="flex gap-32">
+                    <th>Seller</th>
+                    <th className="">Toy Name</th>
+                    <th >Sub Category</th>
+                    <th className="ml-6">Price</th>
+                    <th className="ml-4">Available Quantity</th>
+                </tr>
+            </thead>
+           <tbody>
+           {
+                allToys.map(toy => <ToyTable toy={toy} />)
+            }
+           </tbody>
+            
 
 
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>Seller</th>
-                            <th>Toy Name</th>
-                            <th>Sub Category</th>
-                            <th>Price</th>
-                            <th>Available Quantity</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* row 1 */}
-                        <tr>
-
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Hart Hagerty</div>
-                                        <div className="text-sm opacity-50">United States</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                            </td>
-                            <td>Purple</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <th>
-                                <button className="btn btn-secondary">details</button>
-                            </th>
-                        </tr>
-                        {/* row 2 */}
-                        <tr>
-
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-3@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Brice Swyre</div>
-                                        <div className="text-sm opacity-50">China</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Carroll Group
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Tax Accountant</span>
-                            </td>
-                            <td>Red</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <th>
-                                <button className="btn btn-secondary">details</button>
-                            </th>
-                        </tr>
-                        {/* row 3 */}
-                        <tr>
-
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-4@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Marjy Ferencz</div>
-                                        <div className="text-sm opacity-50">Russia</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Rowe-Schoen
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Office Assistant I</span>
-                            </td>
-                            <td>Crimson</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <th>
-                                <button className="btn btn-secondary">details</button>
-                            </th>
-                        </tr>
-                        {/* row 4 */}
-                        <tr>
-
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Yancy Tear</div>
-                                        <div className="text-sm opacity-50">Brazil</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Wyman-Ledner
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
-                            </td>
-                            <td>Indigo</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <th>
-                                <button className="btn btn-secondary">details</button>
-                            </th>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </div>
         </div>
     );
 };
