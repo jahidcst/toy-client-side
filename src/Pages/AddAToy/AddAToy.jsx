@@ -31,7 +31,7 @@ const AddAToy = () => {
             description
         }
         console.log(dataObj)
-        fetch("http://localhost:7000/allToys", {
+        fetch("https://my-toy-server.vercel.app/allToys", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
