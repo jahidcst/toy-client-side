@@ -1,16 +1,43 @@
 
 
 const AddAToy = () => {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+
+        const toyurl = form.url.value;
+        const name = form.name.value;
+        const seller = form.seller.value;
+        const email = form.email.value;
+        const category = form.category.value;
+        const price = form.price.value;
+        const ratting = form.ratting.value;
+        const quantity = form.quantity.value;
+        
+        const dataObj ={
+            toyurl,
+            name,
+            seller,
+            email,
+            category,
+            price,
+            ratting,
+            quantity
+        }
+        console.log(dataObj)
+    }
+
     return (
         <div className="my-10">
             <h1 className="text-3xl text-center font-bold  text-green-600"> Add Your Favourite Toy :</h1>
-            <form >
+            <form  onSubmit={handleSubmit}>
                 <div className=" hero-content grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">TOY URL</span>
+                            <span className="label-text">TOYURL</span>
                         </label>
-                        <input type="text"  placeholder="Toy URL" name="url" className="input input-bordered" />
+                        <input type="url"  placeholder="Toy URL" name="url" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
