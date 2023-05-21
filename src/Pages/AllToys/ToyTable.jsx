@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const ToyTable = ({ toy }) => {
-    console.log(toy)
+    // console.log(toy)
     const { picture_url, name, sub_category, price, available_quantity, _id } = toy;
 
     return (
@@ -24,7 +24,7 @@ const ToyTable = ({ toy }) => {
 
                         <td className="flex ml-28 gap-28 ">
                             <p className="ml-10">{sub_category}</p>
-                            <p className="ml-20">{price}</p>
+                            <p className="ml-20">$ {price}</p>
                             <p className="ml-28">{available_quantity}</p>
                         </td>
 
