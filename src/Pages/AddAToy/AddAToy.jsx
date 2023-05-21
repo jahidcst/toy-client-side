@@ -17,6 +17,7 @@ const AddAToy = () => {
         const price = form.price.value;
         const ratting = form.ratting.value;
         const available_quantity = form.quantity.value;
+        const description = form.details.value;
 
         const dataObj = {
             picture_url,
@@ -27,6 +28,7 @@ const AddAToy = () => {
             price,
             ratting,
             available_quantity,
+            description
         }
         console.log(dataObj)
         fetch("http://localhost:7000/allToys", {
@@ -99,7 +101,7 @@ const AddAToy = () => {
                         </label>
                         <input type="text" name="quantity" className="input input-bordered" />
                     </div>
-                    <textarea placeholder="Detail description" className="textarea textarea-bordered textarea-lg w-full max-w" ></textarea>
+                    <textarea placeholder="Detail description" name="details" className="textarea textarea-bordered textarea-lg w-full max-w" ></textarea>
                 </div>
                 <div className="form-control mt-4 mx-4">
                     <input type="submit" className="btn btn-secondary btn-block" value="ADD NOW !!" />

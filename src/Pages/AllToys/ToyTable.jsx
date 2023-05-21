@@ -24,7 +24,7 @@ const ToyTable = ({ toy }) => {
 
                         <td className="flex ml-28 gap-28 ">
                             <p className="ml-10">{sub_category}</p>
-                            <p className="ml-20">$ {price}</p>
+                            <p className="ml-20"> {price}</p>
                             <p className="ml-28">{available_quantity}</p>
                         </td>
 

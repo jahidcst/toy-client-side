@@ -19,7 +19,7 @@ const MyToys = () => {
     }, [user]);
     return (
         <div>
-            <h1>My ALL JOBS: {length}</h1>
+            <h1>My ALL JOBS: {toys.length}</h1>
             <div className="form-control">
                 <div className="input-group">
                     <input type="text" onChange={(e) => setSearch(e.target.value) } placeholder="Search…" className="input input-bordered" /> {" "}
@@ -66,7 +66,7 @@ const MyToys = () => {
                                         {toy.quantity}
                                     </td>
                                     <td className="px-6 py-4">
-                                        <button><a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:bg-gray">Edit</a></button>
+                                        <button><a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:bg-gray">Delete</a></button>
                                     </td>
                                 </tr>
                             })
