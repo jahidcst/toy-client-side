@@ -31,12 +31,12 @@ const AllToys = () => {
                 </div>
             </div>
             {/* head */}
-            <thead className=" overflow-x-auto w-full">
-                <tr className="flex gap-32">
-                    <th>Seller</th>
-                    <th className="">Toy Name</th>
+            <thead className=" overflow-x-auto bg-sky-900 w-full">
+                <tr className="flex gap-32 p-3 text-xl ">
+                    <th>Picture</th>
+                    <th className="-ml-12">Toy Name</th>
                     <th >Sub Category</th>
-                    <th className="ml-6">Price</th>
+                    <th className="ml-2">Price</th>
                     <th className="ml-4">Available Quantity</th>
                 </tr>
             </thead>
@@ -53,3 +53,8 @@ const AllToys = () => {
 };
 
 export default AllToys;
+
+
+
+
+

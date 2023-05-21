@@ -13,7 +13,7 @@ const ToyTable = ({ toy }) => {
                     <div> <div className="flex items-center">
                             <div className="flex items-center gap-24">
                                 <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
+                                    <div className=" rounded-full w-12 h-12">
                                         <img src={picture_url} />
                                     </div>
                                 </div>
