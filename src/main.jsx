@@ -47,7 +47,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/teddy-data/${params.id}`),
+          fetch(`https://my-toy-server.vercel.app/teddy-data/${params.id}`),
       },
       {
         path: "blogs",

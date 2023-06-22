@@ -10,7 +10,7 @@ const TabsCategory = () => {
   const [data, setData] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/teddy-data`)
+    fetch(`https://my-toy-server.vercel.app/teddy-data`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);

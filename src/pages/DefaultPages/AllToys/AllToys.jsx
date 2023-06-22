@@ -14,12 +14,12 @@ const AllToys = () => {
   const pageNumbers = [...Array(totalPages).keys()]
   const [searchText, setSearchText] = useState('');
   useEffect(() => {
-    fetch("http://localhost:3000/total-toys")
+    fetch("https://my-toy-server.vercel.app/total-toys")
       .then((res) => res.json())
       .then((data) => setTotalToys(data.totalToys));
   }, []);
   useEffect(()=>{
-    fetch(`http://localhost:3000/search?text=${searchText}`)
+    fetch(`https://my-toy-server.vercel.app/search?text=${searchText}`)
     .then(res => res.json())
     .then(data => setAllData(data))
     .catch((error) => {
@@ -32,7 +32,7 @@ const AllToys = () => {
   // pagination data fetch
   useEffect(()=>{
     const pageData = async()=>{
-      const res = await fetch(`http://localhost:3000/pagination?page=${currentPage}`);
+      const res = await fetch(`https://my-toy-server.vercel.app/pagination?page=${currentPage}`);
       const data = await res.json();
       setAllData(data)
     }

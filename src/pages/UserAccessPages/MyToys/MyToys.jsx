@@ -16,19 +16,19 @@ const MyToys = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/my-toys/${user?.email}`)
+    fetch(`https://my-toy-server.vercel.app/my-toys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [user, control]);
   // handle search 
   const handleSearch = (e) => {
-    fetch(`http://localhost:3000/teddy-data/${e.target.value}`)
+    fetch(`https://my-toy-server.vercel.app/teddy-data/${e.target.value}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   };
   // delete from database
   const handleDeleteToy = (id) => {
-    fetch(`http://localhost:3000/teddy-data/delete/${id}`, {
+    fetch(`https://my-toy-server.vercel.app/teddy-data/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -50,7 +50,7 @@ const MyToys = () => {
   const handleUpdateToy = (data) => {
     const toyData = { ...data };
     delete toyData._id;
-    fetch(`http://localhost:3000/updateToy/${data._id}`, {
+    fetch(`https://my-toy-server.vercel.app/updateToy/${data._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(toyData),
@@ -72,17 +72,17 @@ const MyToys = () => {
   // filter by low to high price data
   const handlePriceFilter = (e) => {
     if(e.target.value == 'low-to-high'){
-      fetch(`http://localhost:3000/my-toys/descending-price/${user?.email}`)
+      fetch(`https://my-toy-server.vercel.app/my-toys/descending-price/${user?.email}`)
       .then(res => res.json())
       .then(data => setMyToys(data))
     }
     else if(e.target.value == 'high-to-low'){
-      fetch(`http://localhost:3000/my-toys/ascending-price/${user?.email}`)
+      fetch(`https://my-toy-server.vercel.app/my-toys/ascending-price/${user?.email}`)
       .then(res => res.json())
       .then(data => setMyToys(data))
     }
     else{
-      fetch(`http://localhost:3000/my-toys/${user?.email}`)
+      fetch(`https://my-toy-server.vercel.app/my-toys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
     }
